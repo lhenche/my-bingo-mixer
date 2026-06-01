@@ -17,38 +17,47 @@ export function GameScreen({
   onReset,
 }: GameScreenProps) {
   return (
-    <div className="flex flex-col min-h-full bg-gray-50">
-      {/* Header */}
-      <header className="flex items-center justify-between p-3 bg-white border-b border-gray-200">
+    <div className="relative min-h-full overflow-hidden bg-[var(--color-bg-alt)]">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-10 left-8 h-24 w-24 rounded-full bg-pink-300/30 blur-3xl" />
+        <div className="absolute top-28 right-10 h-28 w-28 rounded-full bg-violet-300/30 blur-3xl" />
+        <div className="absolute bottom-16 left-16 h-20 w-20 rounded-full bg-sky-300/30 blur-3xl" />
+      </div>
+
+      <header className="relative z-10 mx-auto flex w-full max-w-4xl items-center justify-between gap-4 px-4 py-5">
         <button
           onClick={onReset}
-          className="text-gray-500 text-sm px-3 py-1.5 rounded active:bg-gray-100"
+          className="rounded-full border border-white/70 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-[0_10px_30px_-20px_rgba(15,23,42,0.25)] transition hover:bg-white"
         >
-          ← Back
+          ← Volver
         </button>
-        <h1 className="font-bold text-gray-900">Bingo Mixer</h1>
-        <div className="w-16"></div>
+
+        <div className="rounded-3xl bg-white/80 px-5 py-3 text-center shadow-[0_20px_70px_-40px_rgba(168,85,247,0.35)] backdrop-blur-xl border border-white/60">
+          <p className="text-xs uppercase tracking-[0.25em] text-pink-500">Anime Bubble Bingo</p>
+          <h1 className="mt-1 text-2xl font-black text-slate-900">Bingo Mixer</h1>
+        </div>
+
+        <div className="w-12" />
       </header>
 
-      {/* Instructions */}
-      <p className="text-center text-gray-500 text-sm py-2 px-4">
-        Tap a square when you find someone who matches it.
-      </p>
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-4 pb-8">
+        <p className="mt-2 rounded-full bg-white/80 px-4 py-2 text-center text-sm font-medium text-slate-600 shadow-sm border border-white/60">
+          Toca una casilla cuando encuentres a alguien que coincida.
+        </p>
 
-      {/* Bingo indicator */}
-      {hasBingo && (
-        <div className="bg-amber-100 text-amber-800 text-center py-2 font-semibold text-sm">
-          🎉 BINGO! You got a line!
+        {hasBingo && (
+          <div className="mt-5 rounded-[2rem] border border-pink-200/80 bg-pink-50/90 px-5 py-4 text-center text-sm font-semibold text-pink-800 shadow-[0_20px_50px_-30px_rgba(236,72,153,0.45)]">
+            <span className="text-lg">🎉</span> ¡BINGO! Haz conseguido una línea.
+          </div>
+        )}
+
+        <div className="mt-8 w-full">
+          <BingoBoard
+            board={board}
+            winningSquareIds={winningSquareIds}
+            onSquareClick={onSquareClick}
+          />
         </div>
-      )}
-
-      {/* Board */}
-      <div className="flex-1 flex items-center justify-center p-3">
-        <BingoBoard
-          board={board}
-          winningSquareIds={winningSquareIds}
-          onSquareClick={onSquareClick}
-        />
       </div>
     </div>
   );

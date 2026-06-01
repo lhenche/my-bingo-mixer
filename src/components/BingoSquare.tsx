@@ -8,27 +8,36 @@ interface BingoSquareProps {
 
 export function BingoSquare({ square, isWinning, onClick }: BingoSquareProps) {
   const baseClasses =
-    'relative flex items-center justify-center p-1 text-center border border-gray-300 rounded transition-all duration-150 select-none min-h-[60px] text-xs leading-tight';
+    'relative flex items-center justify-center rounded-[1.5rem] border p-3 text-center transition-all duration-200 select-none min-h-[76px] text-sm leading-tight shadow-sm focus:outline-none focus:ring-2 focus:ring-fuchsia-300';
 
   const stateClasses = square.isMarked
     ? isWinning
-      ? 'bg-amber-200 border-amber-400 text-amber-900'
-      : 'bg-marked border-marked-border text-green-800'
-    : 'bg-white text-gray-700 active:bg-gray-100';
+      ? 'bg-gradient-to-br from-fuchsia-200 via-pink-100 to-violet-200 border-pink-300 text-fuchsia-900 shadow-[0_0_0_4px_rgba(236,72,153,0.12)]'
+      : 'bg-white/90 border-pink-200 text-slate-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]'
+    : 'bg-white/70 border-white/80 text-slate-700 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_-30px_rgba(168,85,247,0.2)] active:translate-y-0';
 
-  const freeSpaceClasses = square.isFreeSpace ? 'font-bold text-sm' : '';
+  const freeSpaceClasses = square.isFreeSpace ? 'font-semibold text-slate-900' : '';
 
   return (
     <button
       onClick={onClick}
       disabled={square.isFreeSpace}
-      className={`${baseClasses} ${stateClasses} ${freeSpaceClasses}`}
+      className={`${baseClasses} ${stateClasses} ${freeSpaceClasses} ${square.isFreeSpace ? 'cursor-default' : 'cursor-pointer'}`}
       aria-pressed={square.isMarked}
       aria-label={square.isFreeSpace ? 'Free space' : square.text}
     >
-      <span className="wrap-break-word hyphens-auto">{square.text}</span>
+      {square.isFreeSpace ? (
+        <span className="inline-flex flex-col items-center gap-1 text-sm font-semibold text-pink-600">
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-pink-100 text-xs shadow-sm">★</span>
+          Libre
+        </span>
+      ) : (
+        <span className="wrap-break-word hyphens-auto">{square.text}</span>
+      )}
       {square.isMarked && !square.isFreeSpace && (
-        <span className="absolute top-0.5 right-0.5 text-green-600 text-xs">✓</span>
+        <span className="absolute top-2 right-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/90 text-pink-600 text-xs font-bold shadow-sm">
+          ✓
+        </span>
       )}
     </button>
   );
