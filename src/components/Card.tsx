@@ -22,7 +22,8 @@ export function Card({
   const handleSwipe = (direction: 'left' | 'right') => {
     if (isAnimating) return;
     setIsAnimating(true);
-    const targetTranslate = direction === 'left' ? -400 : 400;
+    const isMobile = window.innerWidth < 500;
+    const targetTranslate = (direction === 'left' ? -1 : 1) * (isMobile ? 250 : 400);
     setTranslateX(targetTranslate);
     setOpacity(0);
 
