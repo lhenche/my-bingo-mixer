@@ -41,7 +41,7 @@ export function GameScreen({
       </header>
 
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-4 pb-8">
-        <p className="mt-2 rounded-full bg-white/80 px-4 py-2 text-center text-sm font-medium text-slate-600 shadow-sm border border-white/60">
+        <p className="mt-2 rounded-full bg-white/80 px-4 py-2 text-center text-sm font-medium text-slate-700 shadow-sm border border-white/60">
           Pregunta primero, luego marca. El centro ya es tu espacio libre.
         </p>
 
