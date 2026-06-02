@@ -24,7 +24,7 @@ export function StartScreen({ onStartBingo, onStartCardDeck }: StartScreenProps)
           </h1>
 
           <p className="mt-4 text-lg leading-8 text-slate-600">
-            Dos formas divertidas de conectar con tus amigos
+            Dos juegos para romper el hielo y conectar con tu grupo.
           </p>
         </div>
 
@@ -39,9 +39,9 @@ export function StartScreen({ onStartBingo, onStartCardDeck }: StartScreenProps)
             <h2 className="text-2xl font-bold text-slate-900 mb-3">Bingo Bubbles</h2>
             <div className="rounded-2xl bg-white/60 p-4 mb-4">
               <ul className="space-y-2 text-sm leading-6 text-slate-600 text-left">
-                <li>• Encuentra 5 en raya</li>
-                <li>• Marca casillas</li>
-                <li>• Gana BINGO</li>
+                <li>• Busca coincidencias entre los jugadores</li>
+                <li>• Marca cuando alguien calce con la frase</li>
+                <li>• Completa 5 casillas en fila para ganar</li>
               </ul>
             </div>
             <p className="text-sm text-slate-500 group-hover:text-slate-700 transition">
@@ -58,9 +58,9 @@ export function StartScreen({ onStartBingo, onStartCardDeck }: StartScreenProps)
             <h2 className="text-2xl font-bold text-slate-900 mb-3">Card Deck Shuffle</h2>
             <div className="rounded-2xl bg-white/60 p-4 mb-4">
               <ul className="space-y-2 text-sm leading-6 text-slate-600 text-left">
-                <li>• Toca una tarjeta</li>
-                <li>• Descubre preguntas</li>
-                <li>• Sin fin</li>
+                <li>• Toca una tarjeta para revelar una pregunta</li>
+                <li>• Responde o comparte una anécdota breve</li>
+                <li>• Sigue pasando cartas sin parar</li>
               </ul>
             </div>
             <p className="text-sm text-slate-500 group-hover:text-slate-700 transition">

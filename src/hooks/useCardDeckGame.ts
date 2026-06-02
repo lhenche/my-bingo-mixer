@@ -46,7 +46,7 @@ export function useCardDeckGame(): CardDeckGameHook {
     }
   }, [isFlipped, getRandomQuestion]);
 
-  const handleCardSwipe = useCallback((_direction: 'left' | 'right') => {
+  const handleCardSwipe = useCallback(() => {
     // Get new question on swipe (fallo/éxito)
     setCurrentQuestion(getRandomQuestion());
     setIsFlipped(true);

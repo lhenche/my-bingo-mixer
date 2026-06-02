@@ -29,7 +29,7 @@ export function GameScreen({
           onClick={onReset}
           className="rounded-full border border-white/70 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-[0_10px_30px_-20px_rgba(15,23,42,0.25)] transition hover:bg-white"
         >
-          ← Volver
+          ← Nuevo tablero
         </button>
 
         <div className="rounded-3xl bg-white/80 px-5 py-3 text-center shadow-[0_20px_70px_-40px_rgba(168,85,247,0.35)] backdrop-blur-xl border border-white/60">
@@ -42,11 +42,11 @@ export function GameScreen({
 
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-4 pb-8">
         <p className="mt-2 rounded-full bg-white/80 px-4 py-2 text-center text-sm font-medium text-slate-600 shadow-sm border border-white/60">
-          Toca una casilla cuando encuentres a alguien que coincida.
+          Pregunta primero, luego marca. El centro ya es tu espacio libre.
         </p>
 
         {hasBingo && (
-          <div className="mt-5 rounded-4xl border border-pink-200/80 bg-pink-50/90 px-5 py-4 text-center text-sm font-semibold text-pink-800 shadow-[0_20px_50px_-30px_rgba(236,72,153,0.45)]">
+          <div className="mt-5 rounded-4xl border border-pink-200/80 bg-pink-50/90 px-5 py-4 text-center text-sm font-semibold text-pink-800 shadow-[0_20px_50px_-30px_rgba(236,72,153,0.45)] bingo-highlight">
             <span className="text-lg">🎉</span> ¡BINGO! Haz conseguido una línea.
           </div>
         )}

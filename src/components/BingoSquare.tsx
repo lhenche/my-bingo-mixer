@@ -12,11 +12,11 @@ export function BingoSquare({ square, isWinning, onClick }: BingoSquareProps) {
 
   const stateClasses = square.isMarked
     ? isWinning
-      ? 'bg-gradient-to-br from-fuchsia-200 via-pink-100 to-violet-200 border-pink-300 text-fuchsia-900 shadow-[0_0_0_4px_rgba(236,72,153,0.12)]'
-      : 'bg-white/90 border-pink-200 text-slate-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]'
+      ? 'bg-gradient-to-br from-fuchsia-200 via-pink-100 to-violet-200 border-pink-300 text-fuchsia-900 shadow-[0_0_0_4px_rgba(236,72,153,0.12)] square-glow'
+      : 'bg-white/90 border-pink-200 text-slate-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] square-pop'
     : 'bg-white/70 border-white/80 text-slate-700 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_-30px_rgba(168,85,247,0.2)] active:translate-y-0';
 
-  const freeSpaceClasses = square.isFreeSpace ? 'font-semibold text-slate-900' : '';
+  const freeSpaceClasses = square.isFreeSpace ? 'font-semibold text-slate-900 bg-fuchsia-50 border-pink-200 shadow-sm' : '';
 
   return (
     <button
