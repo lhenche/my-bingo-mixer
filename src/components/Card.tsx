@@ -93,16 +93,18 @@ export function Card({
         <div className="flex gap-4 animate-in fade-in duration-300">
           <button
             onClick={() => handleSwipe('left')}
-            className="flex flex-col items-center gap-2 px-6 py-3 rounded-full bg-red-500/80 hover:bg-red-600 text-white font-semibold transition-all hover:scale-110 active:scale-95 shadow-lg"
+            className="flex flex-col items-center gap-2 px-6 py-3 rounded-full bg-red-500/80 hover:bg-red-600 text-white font-semibold transition-all hover:scale-110 active:scale-95 shadow-lg focus-visible:ring-2 focus-visible:ring-red-300 focus-visible:ring-offset-2"
+            aria-label="Fallo - Descartar pregunta"
           >
-            <span className="text-xl">←</span>
+            <span className="text-xl font-bold">✗</span>
             <span className="text-xs">Fallo</span>
           </button>
           <button
             onClick={() => handleSwipe('right')}
-            className="flex flex-col items-center gap-2 px-6 py-3 rounded-full bg-green-500/80 hover:bg-green-600 text-white font-semibold transition-all hover:scale-110 active:scale-95 shadow-lg"
+            className="flex flex-col items-center gap-2 px-6 py-3 rounded-full bg-green-500/80 hover:bg-green-600 text-white font-semibold transition-all hover:scale-110 active:scale-95 shadow-lg focus-visible:ring-2 focus-visible:ring-green-300 focus-visible:ring-offset-2"
+            aria-label="Éxito - Confirmar pregunta"
           >
-            <span className="text-xl">→</span>
+            <span className="text-xl font-bold">✓</span>
             <span className="text-xs">Éxito</span>
           </button>
         </div>
