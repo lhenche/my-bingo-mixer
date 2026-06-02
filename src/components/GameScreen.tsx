@@ -17,7 +17,7 @@ export function GameScreen({
   onReset,
 }: GameScreenProps) {
   return (
-    <div className="relative min-h-full overflow-hidden bg-[var(--color-bg-alt)]">
+    <div className="relative min-h-full overflow-hidden bg-(--color-bg-alt)">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-10 left-8 h-24 w-24 rounded-full bg-pink-300/30 blur-3xl" />
         <div className="absolute top-28 right-10 h-28 w-28 rounded-full bg-violet-300/30 blur-3xl" />
@@ -46,7 +46,7 @@ export function GameScreen({
         </p>
 
         {hasBingo && (
-          <div className="mt-5 rounded-[2rem] border border-pink-200/80 bg-pink-50/90 px-5 py-4 text-center text-sm font-semibold text-pink-800 shadow-[0_20px_50px_-30px_rgba(236,72,153,0.45)]">
+          <div className="mt-5 rounded-4xl border border-pink-200/80 bg-pink-50/90 px-5 py-4 text-center text-sm font-semibold text-pink-800 shadow-[0_20px_50px_-30px_rgba(236,72,153,0.45)]">
             <span className="text-lg">🎉</span> ¡BINGO! Haz conseguido una línea.
           </div>
         )}

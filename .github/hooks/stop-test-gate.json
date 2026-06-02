@@ -1,0 +1,7 @@
+{
+  "name": "Stop test gate",
+  "description": "Run workspace tests before the agent can finish. If any tests fail, the agent is blocked from finalizing.",
+  "scope": "workspace",
+  "event": "stop",
+  "commands": ["npm test"]
+}
